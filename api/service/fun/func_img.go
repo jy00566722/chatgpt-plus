@@ -6,6 +6,7 @@ import (
 	"chatplus/store/model"
 	"chatplus/utils"
 	"fmt"
+
 	"github.com/imroc/req/v3"
 	"gorm.io/gorm"
 )
@@ -26,7 +27,7 @@ func NewImageFunc(db *gorm.DB, manager *oss.UploaderManager, config *types.AppCo
 		name:          "DALL-E3 绘画",
 		uploadManager: manager,
 		proxyURL:      config.ProxyURL,
-		apiURL:        "https://api.openai.com/v1/images/generations",
+		apiURL:        config.ApiConfig.ApiURL,
 	}
 }
 
